@@ -7,7 +7,7 @@ Version:    0.2.14
 Release:    %mkrel 1
 Summary:    Miscellaneous convenience, extension and workaround code for Python
 
-Group:      System Environment/Libraries
+Group:      System/Libraries
 License:    GPLv2+
 URL:        http://fedorahosted.org/python-slip
 Source0:    http://fedorahosted.org/released/%{name}/%{name}-%{version}.tar.bz2
@@ -27,7 +27,7 @@ This package provides the "slip" and the "slip.util" modules.
 
 %package dbus
 Summary:    Convenience functions for dbus services
-Group:      System Environment/Libraries
+Group:      System/Libraries
 Requires:   %{name} = %{?epoch:%{epoch}:}%{version}-%{release}
 Requires:   dbus-python >= 0.80
 Requires:   python-gobject
@@ -46,7 +46,7 @@ functions and decorators for integrating a dbus service with PolicyKit.
 
 %package gtk
 Summary:    Code to make auto-wrapping gtk labels
-Group:      System Environment/Libraries
+Group:      System/Libraries
 Requires:   %{name} = %{?epoch:%{epoch}:}%{version}-%{release}
 Requires:   pygtk2.0
 
