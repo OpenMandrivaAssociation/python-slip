@@ -88,3 +88,14 @@ rm -rf %buildroot
 %defattr(-,root,root,-)
 %{python_sitelib}/slip/gtk
 %{python_sitelib}/slip.gtk-%{version}-py%{python_version}.egg-info
+
+%changelog
+* Thu Aug 11 2011 Александр Казанцев <kazancas@mandriva.org> 0.2.17-1mdv2011.0
++ Revision: 694012
+- Update to 0.2.17. Prevent dbus timeout error
+
+* Fri May 27 2011 Александр Казанцев <kazancas@mandriva.org> 0.2.14-1
++ Revision: 680332
+- adapt for Mandriva
+- imported package python-slip
+
