@@ -1,2 +1,4 @@
+removed_sources:
+  python-slip-0.2.17.tar.bz2: 742ddc8eaad7c480a9367ce3c10f783a4e36b511
 sources:
-  "python-slip-0.2.17.tar.bz2": 742ddc8eaad7c480a9367ce3c10f783a4e36b511
+  python-slip-0.2.24.tar.bz2: b155a8b0a090292397071680a5172e21c2e847e3
