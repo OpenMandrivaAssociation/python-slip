@@ -3,14 +3,14 @@
 %{!?python_version: %global python_version %(%{__python} -c "from distutils.sysconfig import get_python_version; print get_python_version()")}
 
 Name:       python-slip
-Version:    0.2.17
-Release:    %mkrel 1
+Version:    0.2.24
+Release:    1
 Summary:    Miscellaneous convenience, extension and workaround code for Python
 
 Group:      System/Libraries
 License:    GPLv2+
 URL:        http://fedorahosted.org/python-slip
-Source0:    http://fedorahosted.org/released/%{name}/%{name}-%{version}.tar.bz2
+Source0:    http://fedorahosted.org/released/python-slip/%{name}-%{version}.tar.bz2
 BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 BuildArch:  noarch
 
@@ -76,6 +76,7 @@ rm -rf %buildroot
 %dir %{python_sitelib}/slip/
 %{python_sitelib}/slip/__init__.py*
 %{python_sitelib}/slip/util
+%{python_sitelib}/slip/_wrappers
 %{python_sitelib}/slip-%{version}-py%{python_version}.egg-info
 
 %files dbus
@@ -98,4 +99,5 @@ rm -rf %buildroot
 + Revision: 680332
 - adapt for Mandriva
 - imported package python-slip
+
 
