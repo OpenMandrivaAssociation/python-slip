@@ -2,22 +2,18 @@
 %{!?python_sitelib: %global python_sitelib %(%{__python} -c "from distutils.sysconfig import get_python_lib; print get_python_lib(0)")}
 %{!?python_version: %global python_version %(%{__python} -c "from distutils.sysconfig import get_python_version; print get_python_version()")}
 
-Name:       python-slip
-Version:    0.2.24
-Release:    1
-Summary:    Miscellaneous convenience, extension and workaround code for Python
-
-Group:      System/Libraries
-License:    GPLv2+
-URL:        http://fedorahosted.org/python-slip
-Source0:    http://fedorahosted.org/released/python-slip/%{name}-%{version}.tar.bz2
-BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
-BuildArch:  noarch
-
-BuildRequires:  python
-BuildRequires:  python-devel
-
-Requires: python-selinux
+Name:		python-slip
+Version:	0.2.24
+Release:	2
+Summary:	Miscellaneous convenience, extension and workaround code for Python
+Group:		System/Libraries
+License:	GPLv2+
+URL:		http://fedorahosted.org/python-slip
+Source0:	http://fedorahosted.org/released/python-slip/%{name}-%{version}.tar.bz2
+BuildArch:	noarch
+BuildRequires:	python
+BuildRequires:	python-devel
+Requires:	python-selinux
 
 %description
 The Simple Library for Python packages contain miscellaneous code for
@@ -26,14 +22,14 @@ convenience, extension and workaround purposes.
 This package provides the "slip" and the "slip.util" modules.
 
 %package dbus
-Summary:    Convenience functions for dbus services
-Group:      System/Libraries
-Requires:   %{name} = %{?epoch:%{epoch}:}%{version}-%{release}
-Requires:   dbus-python >= 0.80
-Requires:   python-gobject
-Requires:   policykit
-Requires:   polkit >= 0.94
-Requires:   python-decorator
+Summary:	Convenience functions for dbus services
+Group:		System/Libraries
+Requires:	%{name} = %{EVRD}
+Requires:	python-dbus
+Requires:	python-gobject
+Requires:	policykit
+Requires:	polkit >= 0.94
+Requires:	python-decorator
 
 %description dbus
 The Simple Library for Python packages contain miscellaneous code for
@@ -45,10 +41,10 @@ there are no clients anymore on the message bus, as well as convenience
 functions and decorators for integrating a dbus service with PolicyKit.
 
 %package gtk
-Summary:    Code to make auto-wrapping gtk labels
-Group:      System/Libraries
-Requires:   %{name} = %{?epoch:%{epoch}:}%{version}-%{release}
-Requires:   pygtk2.0
+Summary:	Code to make auto-wrapping gtk labels
+Group:		System/Libraries
+Requires:	%{name} = %{EVRD}
+Requires:	pygtk2.0
 
 %description gtk
 The Simple Library for Python packages contain miscellaneous code for
@@ -64,11 +60,8 @@ lets gtk labels be automatically re-wrapped upon resizing.
 make %{?_smp_mflags}
 
 %install
-rm -rf %buildroot
 make install DESTDIR=%buildroot
 
-%clean
-rm -rf %buildroot
 
 %files
 %defattr(-,root,root,-)
