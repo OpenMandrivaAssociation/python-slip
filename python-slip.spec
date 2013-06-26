@@ -29,7 +29,7 @@ This package provides the "slip" and the "slip.util" modules.
 Summary:    Convenience functions for dbus services
 Group:      System/Libraries
 Requires:   %{name} = %{?epoch:%{epoch}:}%{version}-%{release}
-Requires:   dbus-python >= 0.80
+Requires:   python-dbus >= 0.80
 Requires:   python-gobject
 Requires:   polkit >= 0.94
 Requires:   python-decorator
