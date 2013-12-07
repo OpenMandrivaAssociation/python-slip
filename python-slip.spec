@@ -5,7 +5,7 @@
 Summary:	Miscellaneous convenience, extension and workaround code for Python
 Name:		python-slip
 Version:	0.4.0
-Release:	3
+Release:	4
 Group:		System/Libraries
 License:	GPLv2+
 Url:		http://fedorahosted.org/python-slip
