@@ -1,2 +1,4 @@
-sources:
+removed_sources:
   python-slip-0.4.0.tar.bz2: 92a2ff3a08b180dd7b8b1e569ebbd510841c07f8
+sources:
+  python-slip-0.6.0.tar.bz2: d8a37c4bec4d964cd8bbffd10fd896ae1a819193
