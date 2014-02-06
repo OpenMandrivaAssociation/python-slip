@@ -1,15 +1,15 @@
 # sitelib for noarch packages, sitearch for others (remove the unneeded one)
-%{!?python_sitelib: %global python_sitelib %(%{__python} -c "from distutils.sysconfig import get_python_lib; print get_python_lib(0)")}
-%{!?python_version: %global python_version %(%{__python} -c "from distutils.sysconfig import get_python_version; print get_python_version()")}
+%{!?python_sitelib: %global python_sitelib %(python -c "from distutils.sysconfig import get_python_lib; print get_python_lib(0)")}
+%{!?python_version: %global python_version %(python -c "from distutils.sysconfig import get_python_version; print get_python_version()")}
 
 Summary:	Miscellaneous convenience, extension and workaround code for Python
 Name:		python-slip
-Version:	0.4.0
-Release:	5
+Version:	0.6.0
+Release:	1
 Group:		System/Libraries
 License:	GPLv2+
 Url:		http://fedorahosted.org/python-slip
-Source0:	https://fedorahosted.org/released/python-slip/%{name}-%{version}.tar.bz2
+Source0:	http://fedorahosted.org/released/python-slip/%{name}-%{version}.tar.bz2
 Patch0:		python-slip-0.2.24-selinux.patch
 BuildArch:	noarch
 BuildRequires:	pkgconfig(python)
@@ -60,22 +60,23 @@ lets gtk labels be automatically re-wrapped upon resizing.
 %make
 
 %install
-make install DESTDIR=%{buildroot}
+%makeinstall_std
 
 %files
 %doc COPYING doc/dbus
-%dir %{python_sitelib}/slip/
-%{python_sitelib}/slip/__init__.py*
-%{python_sitelib}/slip/util
-%{python_sitelib}/slip/_wrappers
-%{python_sitelib}/slip-%{version}-py%{python_version}.egg-info
+%dir %{py_puresitedir}/slip/
+%{py_puresitedir}/slip/__init__.py*
+%{py_puresitedir}/slip/util
+%{py_puresitedir}/slip/_wrappers
+%{py_puresitedir}/slip-%{version}-py%{py_ver}.egg-info
 
 %files dbus
 %doc doc/dbus/*
-%{python_sitelib}/slip/dbus
-%{python_sitelib}/slip.dbus-%{version}-py%{python_version}.egg-info
+%{py_puresitedir}/slip/dbus
+%{py_puresitedir}/slip.dbus-%{version}-py%{py_ver}.egg-info
 
 %files gtk
-%{python_sitelib}/slip/gtk
-%{python_sitelib}/slip.gtk-%{version}-py%{python_version}.egg-info
+%{py_puresitedir}/slip/gtk
+%{py_puresitedir}/slip.gtk-%{version}-py%{py_ver}.egg-info
+
 
