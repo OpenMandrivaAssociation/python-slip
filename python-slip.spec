@@ -4,7 +4,7 @@
 
 Name:       python-slip
 Version:    0.4.0
-Release:    1
+Release:    2
 Summary:    Miscellaneous convenience, extension and workaround code for Python
 Group:      System/Libraries
 License:    GPLv2+
