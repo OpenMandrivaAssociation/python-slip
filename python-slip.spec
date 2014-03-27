@@ -1,11 +1,7 @@
-# sitelib for noarch packages, sitearch for others (remove the unneeded one)
-%{!?python_sitelib: %global python_sitelib %(python -c "from distutils.sysconfig import get_python_lib; print get_python_lib(0)")}
-%{!?python_version: %global python_version %(python -c "from distutils.sysconfig import get_python_version; print get_python_version()")}
-
 Summary:	Miscellaneous convenience, extension and workaround code for Python
 Name:		python-slip
 Version:	0.6.0
-Release:	1
+Release:	2
 Group:		System/Libraries
 License:	GPLv2+
 Url:		http://fedorahosted.org/python-slip
@@ -14,6 +10,7 @@ Patch0:		python-slip-0.2.24-selinux.patch
 BuildArch:	noarch
 BuildRequires:	pkgconfig(python)
 Obsoletes:	policykit
+Requires:       python-six
 
 %description
 The Simple Library for Python packages contain miscellaneous code for
