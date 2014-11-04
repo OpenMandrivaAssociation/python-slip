@@ -23,7 +23,6 @@ Summary:	Convenience functions for dbus services
 Group:		System/Libraries
 Requires:	%{name} = %{?epoch:%{epoch}:}%{version}-%{release}
 Requires:	python-dbus >= 0.80
-Requires:	python-gobject
 Requires:	polkit >= 0.94
 Requires:	python-decorator
 
@@ -53,7 +52,6 @@ Summary:        Convenience functions for dbus services
 Group:          System/Libraries
 Requires:       %{name} = %{?epoch:%{epoch}:}%{version}-%{release}
 Requires:       python2-dbus >= 0.80
-Requires:       python2-gobject
 Requires:       polkit >= 0.94
 Requires:       python2-decorator
 
