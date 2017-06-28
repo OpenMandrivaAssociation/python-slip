@@ -1,14 +1,15 @@
 Summary:	Miscellaneous convenience, extension and workaround code for Python
 Name:		python-slip
-Version:	0.6.0
-Release:	8
+Version:	0.6.5
+Release:	1
 Group:		System/Libraries
 License:	GPLv2+
-Url:		http://fedorahosted.org/python-slip
-Source0:	http://fedorahosted.org/released/python-slip/%{name}-%{version}.tar.bz2
+Url:		https://github.com/nphilipp/python-slip
+Source0:	https://github.com/nphilipp/python-slip/archive/python-slip-%{version}.tar.gz
 Patch0:		python-slip-0.2.24-selinux.patch
 BuildArch:	noarch
-BuildRequires:	pkgconfig(python)
+BuildRequires:	pkgconfig(python2)
+BuildRequires:	pkgconfig(python3)
 Obsoletes:	policykit
 Requires:       python-six
 
@@ -79,7 +80,7 @@ This package provides slip.gtk.set_autowrap(), a convenience function which
 lets gtk labels be automatically re-wrapped upon resizing.
 
 %prep
-%setup -q
+%setup -qn %{name}-%{name}-%{version}
 %apply_patches
 cp -a . %{py2dir}
 find %{py2dir} -name '*.py' -o -name '*.py.in' | xargs sed -i '1s|^#!/usr/bin/python|#!%{__python2}|'
