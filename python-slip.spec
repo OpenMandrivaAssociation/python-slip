@@ -102,6 +102,7 @@ pushd %{py2dir}
 %doc COPYING doc/dbus
 %dir %{py_puresitedir}/slip/
 %{py_puresitedir}/slip/__init__.py*
+%{py_puresitedir}/slip/__pycache__/*
 %{py_puresitedir}/slip/util
 %{py_puresitedir}/slip/_wrappers
 %{py_puresitedir}/slip-%{version}-py%{py_ver}.egg-info
