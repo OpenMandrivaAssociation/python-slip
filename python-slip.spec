@@ -1,7 +1,7 @@
 Summary:	Miscellaneous convenience, extension and workaround code for Python
 Name:		python-slip
 Version:	0.6.5
-Release:	4
+Release:	5
 Group:		System/Libraries
 License:	GPLv2+
 Url:		https://github.com/nphilipp/python-slip
@@ -22,7 +22,7 @@ This package provides the "slip" and the "slip.util" modules.
 %package dbus
 Summary:	Convenience functions for dbus services
 Group:		System/Libraries
-Requires:	%{name} = %{?epoch:%{epoch}:}%{version}-%{release}
+Requires:	%{name} = %{EVRD}
 Requires:	python-dbus >= 0.80
 Requires:	polkit >= 0.94
 Requires:	python-decorator
@@ -47,11 +47,10 @@ convenience, extension and workaround purposes.
 
 This package provides the "slip" and the "slip.util" modules.
 
-
 %package -n python2-slip-dbus
 Summary:        Convenience functions for dbus services
 Group:          System/Libraries
-Requires:       %{name} = %{?epoch:%{epoch}:}%{version}-%{release}
+Requires:       %{name} = %{EVRD}
 Requires:       python2-dbus >= 0.80
 Requires:       polkit >= 0.94
 Requires:       python2-decorator
@@ -65,11 +64,10 @@ derivative that ends itself after a certain time without being used and/or if
 there are no clients anymore on the message bus, as well as convenience
 functions and decorators for integrating a dbus service with PolicyKit.
 
-
 %package -n python2-slip-gtk
 Summary:	Code to make auto-wrapping gtk labels
 Group:		System/Libraries
-Requires:	%{name} = %{?epoch:%{epoch}:}%{version}-%{release}
+Requires:	%{name} = %{EVRD}
 Requires:	pygtk2.0
 
 %description -n python2-slip-gtk
@@ -80,23 +78,23 @@ This package provides slip.gtk.set_autowrap(), a convenience function which
 lets gtk labels be automatically re-wrapped upon resizing.
 
 %prep
-%setup -qn %{name}-%{name}-%{version}
-%apply_patches
+%autosetup -n %{name}-%{name}-%{version} -p1
 cp -a . %{py2dir}
 find %{py2dir} -name '*.py' -o -name '*.py.in' | xargs sed -i '1s|^#!/usr/bin/python|#!%{__python2}|'
 
 %build
-%make PYTHON=%__python
+%make_build PYTHON=%{__python}
 
-pushd %{py2dir}
-%make PYTHON=%__python2
+cd %{py2dir}
+%make_build PYTHON=%{__python2}
+cd -
 
 %install
-%makeinstall_std PYTHON=%__python
+%make_install PYTHON=%{__python}
 
-pushd %{py2dir}
-%makeinstall_std PYTHON=%__python2
-
+cd %{py2dir}
+%make_install PYTHON=%{__python2}
+cd -
 
 %files
 %doc COPYING doc/dbus
@@ -128,5 +126,3 @@ pushd %{py2dir}
 %files -n python2-slip-gtk
 %{py2_puresitedir}/slip/gtk
 %{py2_puresitedir}/slip.gtk-%{version}-py%{py2_ver}.egg-info
-
-
