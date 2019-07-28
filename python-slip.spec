@@ -22,6 +22,7 @@ This package provides the "slip" and the "slip.util" modules.
 %package dbus
 Summary:	Convenience functions for dbus services
 Group:		System/Libraries
+Provides:	python3-slip-dbus = %{EVRD}
 Requires:	%{name} = %{EVRD}
 Requires:	python-dbus >= 0.80
 Requires:	polkit >= 0.94
