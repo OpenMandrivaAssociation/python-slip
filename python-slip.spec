@@ -1,7 +1,7 @@
 Summary:	Miscellaneous convenience, extension and workaround code for Python
 Name:		python-slip
 Version:	0.6.5
-Release:	2
+Release:	3
 License:	GPLv2+
 Group:		Development/Python
 Url:		https://github.com/nphilipp/python-slip
