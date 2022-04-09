@@ -1,7 +1,7 @@
 Summary:	Miscellaneous convenience, extension and workaround code for Python
 Name:		python-slip
 Version:	0.6.5
-Release:	3
+Release:	4
 License:	GPLv2+
 Group:		Development/Python
 Url:		https://github.com/nphilipp/python-slip
@@ -19,7 +19,6 @@ This package provides the "slip" and the "slip.util" modules.
 %files
 %doc COPYING doc/dbus
 %dir %{python_sitelib}/slip/
-%{python_sitelib}/slip/__pycache__
 %{python_sitelib}/slip/__init__.py*
 %{python_sitelib}/slip/util
 %{python_sitelib}/slip/_wrappers
