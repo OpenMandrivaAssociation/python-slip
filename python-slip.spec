@@ -6,6 +6,7 @@ License:	GPLv2+
 Group:		Development/Python
 Url:		https://github.com/nphilipp/python-slip
 Source0:	https://github.com/nphilipp/python-slip/releases/download/python-slip-%{version}/python-slip-%{version}.tar.bz2
+BuildRequires:	make
 BuildRequires:	pkgconfig(python)
 Requires:	python-six
 BuildArch:	noarch
