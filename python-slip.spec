@@ -8,6 +8,7 @@ Url:		https://github.com/nphilipp/python-slip
 Source0:	https://github.com/nphilipp/python-slip/releases/download/python-slip-%{version}/python-slip-%{version}.tar.bz2
 BuildRequires:	make
 BuildRequires:	pkgconfig(python)
+BuildRequires:	python%{pyver}dist(setuptools)
 Requires:	python-six
 BuildArch:	noarch
 
@@ -57,6 +58,10 @@ functions and decorators for integrating a dbus service with PolicyKit.
 %prep
 %autosetup -p1
 find . -name '*.py' -o -name '*.py.in' | xargs sed -i '1s|^#!/usr/bin/python|#!%{__python3}|'
+sed -i \
+	-e 's/from distutils.core import setup/from setuptools import setup/' \
+	-e 's/import distutils.core/import setuptools/' \
+	setup.py
 
 %build
 %make_build PYTHON=%__python
