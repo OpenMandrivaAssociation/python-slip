@@ -58,10 +58,11 @@ functions and decorators for integrating a dbus service with PolicyKit.
 %prep
 %autosetup -p1
 find . -name '*.py' -o -name '*.py.in' | xargs sed -i '1s|^#!/usr/bin/python|#!%{__python3}|'
+# setup.py is generated from setup.py.in at build time.
 sed -i \
 	-e 's/from distutils.core import setup/from setuptools import setup/' \
 	-e 's/import distutils.core/import setuptools/' \
-	setup.py
+	setup.py.in
 
 %build
 %make_build PYTHON=%__python
